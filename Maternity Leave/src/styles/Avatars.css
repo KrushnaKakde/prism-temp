@@ -1,0 +1,792 @@
+.avatars-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  min-height: 100vh;
+}
+
+/* Leave Request Section Styles */
+.leave-request-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #F9FAFB;
+  border-radius: 10px;
+
+}
+
+/* Leave Balance Overview Styles */
+.leave-balance-overview {
+  background-color: #F9FAFB;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.leave-balance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.leave-balance-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.leave-balance-title h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.leave-icon {
+  color: #52C41A; /* Green color to match calendar design */
+  font-size: 18px;
+}
+
+.info-icon {
+  color: #9CA3AF; /* Gray color to match original SVG */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.financial-year {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #a3a3a3;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+.financial-year span {
+  font-size: 14px;
+  color: #666;
+}
+
+.year-selector {
+  display: flex;
+  gap: 12px;
+}
+
+.year-selector .radio-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.year-selector .radio-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #0078d4;
+  border-radius: 50%;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.year-selector .radio-option input[type="radio"]:checked {
+  background-color: #0078d4;
+}
+
+.year-selector .radio-option input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.year-selector .radio-option label {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.leave-types-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.leave-type {
+  flex: 1;
+  min-width: 120px;
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.leave-type h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.leave-type .days {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+}
+
+.casual {
+  background-color: #e3f2fd;
+}
+
+.service {
+  background-color: #e8f5e9;
+}
+
+.privilege {
+  background-color: #fff3e0;
+}
+
+.additional {
+  background-color: #f3e5f5;
+}
+
+.loss {
+  background-color: #ffebee;
+}
+
+.service-2 {
+  background-color: #e0f7fa;
+  position: relative;
+}
+
+.service-arrow {
+  position: absolute;
+  top: -11px;
+  right: -11px;
+  z-index: 10;
+}
+
+.maternity {
+  background-color: #f1f8e9;
+}
+
+/* Apply/Cancel Leave Styles */
+.apply-cancel-leave {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.apply-cancel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.apply-cancel-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.apply-cancel-header .leave-info-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.apply-cancel-header .leave-info-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #222;
+  font-weight: 400;
+}
+
+.apply-cancel-header .days-highlight {
+  color: #16a34a; /* green */
+  font-weight: 700;
+}
+
+.apply-cancel-header .info-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #7c3aed; /* purple-ish icon */
+  font-size: 16px;
+}
+
+.apply-cancel-header .info-text {
+  font-size: 12px;
+  color: #6b7280; /* gray text */
+  font-weight: 500;
+}
+
+.document-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.document-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.apply-cancel-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.leave-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  border-left: 4px solid #0078d4;
+}
+
+.leave-info-text {
+  flex: 1;
+}
+
+.leave-info-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.days-highlight {
+  color: #0078d4;
+  font-weight: 600;
+}
+
+.info-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #0078d4;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.info-button:hover {
+  background-color: rgba(0, 120, 212, 0.1);
+}
+
+.info-text {
+  font-weight: 500;
+}
+
+/* Form Styles */
+.leave-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-row-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 64px; /* space between the two groups */
+  align-items: start;
+  padding: 20px 0; /* match section vertical rhythm */
+  border-bottom: 1px solid #e5e5e5; /* single divider across both */
+  margin-bottom: 0;
+}
+
+.form-row-pair .form-row {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.form-row-pair .form-row label {
+  margin-bottom: 16px;
+}
+
+.form-row-pair .request-type .radio-options {
+  grid-template-columns: auto auto;
+  justify-content: flex-start;
+  gap: 60px;
+}
+
+.form-row-pair .day-type .radio-options {
+  grid-template-columns: auto auto auto;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .form-row-pair {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+}
+
+.form-row.request-type,
+.form-row.day-type {
+  padding-bottom: 0;
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
+.form-row label {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.radio-options {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #0078d4;
+  border-radius: 50%;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+}
+
+.radio-option input[type="radio"]:checked {
+  background-color: #0078d4;
+  border-color: #0078d4;
+}
+
+.radio-option input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-option label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 400;
+  cursor: pointer;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Three column layout for Leave Type, Sub Categories, Expected Delivery Date */
+.form-row.three-column {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  gap: 20px; /* keep in sync with date-range column-gap */
+}
+
+.form-row.three-column > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-row.three-column label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 6px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Date range row: match widths with three-column selects */
+.form-row.date-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr max-content; /* From | To | compact Add button */
+  column-gap: 10px; /* EXACT 10px gap between From and To */
+  align-items: end;
+  margin-bottom: 20px;
+ }
+
+.date-field {
+  width: 100%;
+  margin-right: 10px;
+}
+
+.date-input {
+  position: relative; /* icon anchor */
+  display: flex;
+  align-items: center;
+  width: 100%; /* remove any fixed widths */
+  background-color: white;
+}
+
+/* Give room for the calendar icon inside the field */
+.date-input input {
+  width: 100%;
+  padding: 10px 12px;
+  padding-right: 40px; /* space for calendar icon */
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Calendar icon positioned inside the input on the right */
+.form-row.date-range .calendar-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* Select dropdown styles */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper select {
+  width: 100%;
+  padding: 10px 12px;
+  padding-right: 35px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  appearance: none;
+  -webkit-appearance: none;
+  min-height: 40px;
+  box-sizing: border-box;
+}
+
+.select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* Checkbox styles */
+.acknowledgment {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.acknowledgment input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: #0078d4;
+  cursor: pointer;
+}
+
+.acknowledgment label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 400;
+  cursor: pointer;
+  line-height: 1.4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* File upload styles */
+.proof-section {
+  margin: 20px 0;
+}
+
+.proof-section label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.file-upload {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 33.33vw;
+  height: 56px;
+}
+
+.upload-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 10px 12px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.choose-file {
+  background-color: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 3px;
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.no-file {
+  font-size: 13px;
+  color: #6b7280;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.upload-btn {
+  background-color: #ffffff;
+  color: #106ebe;
+  border: 1px solid #106ebe;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 12px;
+  margin-right: 0px;
+}
+
+
+
+/* Text input and textarea styles */
+.form-row input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-row textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background-color: white;
+  min-height: 80px;
+  resize: vertical;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-row.reason label,
+.form-row.comment label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Match Reason input height to Comment textarea */
+.form-row.reason input[type="text"] {
+  height: 100px; /* same as textarea min-height */
+  box-sizing: border-box; /* include padding and border in height */
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+}
+
+.cancel-btn {
+  background-color: white;
+  color: #374151;
+  border: 2px solid #106ebe;
+  border-radius: 4px;
+  padding: 10px 24px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cancel-btn:hover {
+  background-color: #f9fafb;
+}
+
+.submit-btn {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 24px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.submit-btn:hover {
+  background-color: #106ebe;
+}
+
+/* View policies */
+.view-policies {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #545d6a;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 16px;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.policy-icon {
+  font-size: 16px;
+}
+
+.view-policies:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .leave-balance-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .date-range {
+    flex-direction: column;
+  }
+  
+  .leave-types-container {
+    flex-direction: column;
+  }
+  
+  .leave-type {
+    min-width: 100%;
+  }
+}
+
+/* From Date visual (light gray) to match screenshot */
+.from-date .date-input input {
+  background-color: #f3f4f6;
+  border-color: #e5e7eb;
+  color: #4b5563;
+}
+
+
+/* Keep calendar icon aligned within input height */
+.calendar-icon {
+  position: absolute;
+  right: 10px;
+  color: #6b7280;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* Add to Leave list button: align to baseline and size to content */
+.form-row.date-range .add-to-leave-list {
+  align-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px; /* visually matches 40px input height */
+  border: 1px solid #cfe8ff;
+  border-radius: 6px;
+  color: #1083e8;
+  background: #fff;
+  margin-left: 10px;
+  margin-right: 280px;
+  
+}
+
+.form-row.date-range .add-to-leave-list .add-icon {
+  color: #1083e8;
+  font-size: 18px;
+}
